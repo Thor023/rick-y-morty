@@ -11,10 +11,10 @@ const Status = () => {
       </button>
     </h2>
     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div className="accordion-body">
+      <div className="accordion-body d-flex flex-wrap gap-3">
         {status.map((items, index)=> (
             <FilterBTN key={index} name="status" index={index} items={items}/>
-        ))};
+        ))}
 
       </div>
     </div>

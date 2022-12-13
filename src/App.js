@@ -9,6 +9,7 @@ import Search from "./components/Search/Search";
 function App() {
   let [pageNumber, setPageNumber] = useState(1); //2- definida pagina por defecto
   let [search, setSearch] = useState("");
+  let [status, setStatus] = useState("");
 
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
