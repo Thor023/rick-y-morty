@@ -10,11 +10,13 @@ function App() {
   let [pageNumber, setPageNumber] = useState(1); //2- definida pagina por defecto
   let [search, setSearch] = useState("");
   let [status, setStatus] = useState("");
+  let [gender, setGender] = useState("");
+  let [species, setSpecies] = useState("");
 
   let [fetchedData, updateFetchedData] = useState([]);
   let { info, results } = fetchedData;
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`; //1- guardar la info de api en una variable
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`; //1- guardar la info de api en una variable
 
   useEffect(() => {
     //3-funcion para updatear la pagina base y cargar nueva data
@@ -35,7 +37,12 @@ function App() {
 
       <div className="container">
         <div className="row">
-          <Filters />
+          <Filters 
+            setSpecies={setSpecies}
+            setGender={setGender} 
+            setStatus={setStatus} 
+            setPageNumber={setPageNumber}
+          />
           <div className="col-8">
             <div className="row">
               <Cards results={results} />
