@@ -6,7 +6,7 @@ const InputGroup = ({ total, name, setId }) => {
       <select 
       onChange={(e)=>setId(e.target.value)}
       class="form-select" id={name}>
-        <option selected>Choose...</option>
+        <option value="1" selected>Escoge...</option>
 
         {[...Array(total).keys()].map(x=>{
             return <option value={x+1}>{name} - {x+1}</option>
